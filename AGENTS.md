@@ -2,7 +2,9 @@
 
 ## 📋 Overview
 
-This document provides instructions for AI agents to create comprehensive educational documents following the established patterns and preferences from the `class_1.md` template.
+This document provides instructions for AI agents to create comprehensive
+educational documents following the established patterns and preferences from
+the `class_1.md` template.
 
 ## 🎯 Document Structure
 
@@ -12,6 +14,16 @@ Start every document with:
 
 - A main title (e.g., `# BOOTCAMP 4.0`)
 - A bullet-pointed list of topics to be developed (e.g., "- Tuesday: - Topic 1, - Topic 2...")
+- Each topic should be linked to its corresponding section in the content
+  example: (Don't use punctuation in links or numbered lists items)
+
+```markdown
+- day:
+  - [A Test Section](#a-test-section)
+
+## A Test Section
+```
+
 - A horizontal separator (`---`)
 
 **Example:**
@@ -43,7 +55,17 @@ After the separator, develop each topic listed in the header with:
 Always end the document with the background image divs:
 
 ```html
+<style>
+  .background-images {
+    pointer-events: none;
+  }
+  .background-images* {
+    pointer-events: auto;
+  }
+</style>
+
 <div
+  class="background-images"
   style="
     position: fixed;
     top:0;
@@ -59,27 +81,23 @@ Always end the document with the background image divs:
     src="../assets/back2.png"
     alt="BOOTCAMP 4.0 Badge"
     style="
-      position: fixed;
-      bottom: 25%;
-      left: 0;
-      min-width: 100%;
-      z-index: 0;
-      opacity: 0.1;
-    "
+    position: fixed;
+    right: 0;
+    min-width: 100%;
+    z-index: 1;
+  "
   />
-
   <img
     src="../assets/back1.png"
     alt="BOOTCAMP 4.0 Badge"
     style="
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      height: 100vh;
-      z-index: 0;
-      opacity: 0.1;
-    "
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100vh;
+    z-index: 0;
+  "
   />
 </div>
 ```
@@ -121,7 +139,8 @@ Always end the document with the background image divs:
 
 ### Diagram Orientation Rules
 
-- **Use `graph LR`** (horizontal) when you have more than ~5 sibling nodes to prevent diagrams from becoming too wide
+- **Use `graph LR`** (horizontal) when you have more than ~5 sibling nodes
+  to prevent diagrams from becoming too wide
 - **Use `graph TD`** (vertical) for linear processes or hierarchies with few sibling nodes
 - Consider the A4-width display constraint: horizontal space is limited
 
@@ -137,7 +156,7 @@ Use these dark colors with white stroke and text:
 
 **Standard node styling:**
 
-```
+```mermaid
 style A fill:#2C5F8D,stroke:#fff,stroke-width:3px,color:#fff
 ```
 
@@ -164,7 +183,8 @@ Then add detailed text below explaining conditional logic, system-specific instr
 
 ### Language
 
-- **ALL final document content MUST be in Spanish** (including headings, explanations, code comments where appropriate)
+- **ALL final document content MUST be in Spanish** (including headings,
+  explanations, code comments where appropriate)
 - Use clear, educational language suitable for bootcamp students
 
 ### Use of Emojis

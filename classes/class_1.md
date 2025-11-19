@@ -1,14 +1,15 @@
 # BOOTCAMP 4.0
 
 - Martes:
-  - Visión general de lenguajes: tipos, dominio, implementación, paradigmas soportados.
-  - Python: Introducción e instalación.
-  - Formas de ejecutar código Python.
-  - Sintaxis y estructura básica.
+  - [Visión General de lenguajes](#visión-general-de-lenguajes-de-programación):
+    tipos, dominio, implementación, paradigmas soportados.
+  - [Introducción e instalación a Python.](#introducción-e-instalación-a-python)
+  - [Formas de ejecutar código Python.](#formas-de-ejecutar-código-python)
+  - [Sintaxis y estructura básica.](#sintaxis-y-estructura-básica)
 
 ---
 
-## 1. Visión General de Lenguajes de Programación
+## Visión General de Lenguajes de Programación
 
 ### Tipos de Lenguajes
 
@@ -136,7 +137,7 @@ graph LR
 
 ---
 
-## 2. Python: Introducción e Instalación
+## Introducción e Instalación a Python
 
 ### ¿Qué es Python?
 
@@ -249,7 +250,7 @@ graph LR
 
 ---
 
-## 3. Formas de Ejecutar Código Python
+## Formas de Ejecutar Código Python
 
 ### Modalidades de Ejecución
 
@@ -378,7 +379,7 @@ jupyter lab
 
 ---
 
-## 4. Sintaxis y Estructura Básica
+## Sintaxis y Estructura Básica
 
 ### Elementos Fundamentales
 
@@ -583,7 +584,17 @@ graph LR
 
 ---
 
+<style>
+  .background-images {
+    pointer-events: none;
+  }
+  .background-images* {
+    pointer-events: auto;
+  }
+</style>
+
 <div
+  class="background-images"
   style="
     position: fixed;
     top:0;
