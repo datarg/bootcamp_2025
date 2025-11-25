@@ -116,6 +116,7 @@ Always end the document with the background image divs:
 
 ❌ **DO NOT use:**
 
+- Character `~`
 - `mindmap` (not supported)
 - `flowchart` (use `graph` instead for maximum compatibility)
 - Decision nodes `{}` (rhombus shapes)
