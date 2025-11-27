@@ -22,8 +22,11 @@ def mas_ejercicios() -> Any:
     # Ejercicio 1: Modifique esta función para que devuelva el texto "menor a 10"
     # si `valor` es menor a 10, y "mayor o igual a 10" en caso contrario.
     # Debe usar un `if` para resolverlo, sin usar `else`.
+    
     def a(valor: int) -> str:
-        return ""
+        ret: str = ""
+        if valor < 10: ret="menor a 10"; ret="mayor o igual a 10"
+        return ret
 
     yield a
 
