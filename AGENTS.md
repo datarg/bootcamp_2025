@@ -187,6 +187,7 @@ Then add detailed text below explaining conditional logic, system-specific instr
 - **ALL final document content MUST be in Spanish** (including headings,
   explanations, code comments where appropriate)
 - Use clear, educational language suitable for bootcamp students
+- Row must have 100 characters as maximum, then break lines appropriately.
 
 ### Use of Emojis
 
