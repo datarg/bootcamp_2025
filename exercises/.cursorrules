@@ -198,6 +198,12 @@ Each subtopic becomes one or more exercises. Example:
   - [ ] Appropriate placeholder return value
   - [ ] Descriptive name or following convention (a, b, c...)
 - [ ] If using generator: each function has its `yield`
+- [ ] For external libraries:
+  - [ ] Data directory `exercises_N_data/` created with `__init__.py`
+  - [ ] Dataset files (CSV, etc.) included in data directory
+  - [ ] File paths use `os.path` for robustness
+  - [ ] Type hints match library conventions (`np.ndarray`, `pd.DataFrame`, etc.)
+  - [ ] Return types are correct (`None` for matplotlib, appropriate types for others)
 
 ### Test File
 - [ ] File name follows the pattern `test_exercises_N.py`
@@ -208,6 +214,10 @@ Each subtopic becomes one or more exercises. Example:
   - [ ] Descriptive error messages in Spanish
 - [ ] Uses `_get_next_answer()` if it's a generator pattern
 - [ ] Handles cases where the function doesn't exist (`if function is not None`)
+- [ ] For external libraries:
+  - [ ] Uses appropriate comparison methods (`np.array_equal()` for arrays)
+  - [ ] Checks instance types (`isinstance(result, pd.DataFrame)`)
+  - [ ] For matplotlib functions, tests that they execute without errors
 
 ## 🎨 Best Practices
 
@@ -234,11 +244,150 @@ Each subtopic becomes one or more exercises. Example:
 - Each exercise can depend on previous concepts
 - Group related exercises by subtopic
 
+### External Libraries and Data Files
+- **Data organization**: Create `exercises_N_data/` directory for datasets
+- **File paths**: Always use `os.path.join()` with `__file__` for robust paths
+- **CSV files**: Include at least 6 columns and 50+ rows for meaningful exercises
+- **Module structure**: Add `__init__.py` to data directories
+- **Type consistency**: Ensure return types match library conventions:
+  - NumPy: `np.ndarray`, `float`, `int`, `tuple[int, ...]` for shapes
+  - Pandas: `pd.DataFrame`, `pd.Series`
+  - Matplotlib: `None` (visualization functions)
+
+### Pattern 3: External Libraries (exercises_5.py)
+
+This pattern is used when exercises involve external libraries like numpy, pandas, matplotlib, etc.
+
+#### Exercise file structure:
+
+```python
+"""
+Module documentation explaining the topic and external libraries used.
+"""
+
+# Importaciones necesarias
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from typing import Any
+import os
+
+# Ruta al dataset (relativa al directorio del archivo)
+_current_dir = os.path.dirname(os.path.abspath(__file__))
+DATASET_PATH = os.path.join(_current_dir, "exercises_N_data", "dataset.csv")
+
+# Exercise 1: Function with numpy
+def numpy_ejercicio_1(arr: np.ndarray) -> float:
+    """
+    Docstring explaining what the function should do.
+    """
+    return 0.0
+
+# Exercise 2: Function with pandas
+def pandas_ejercicio_1() -> pd.DataFrame:
+    """
+    Docstring explaining what the function should do.
+    """
+    return pd.DataFrame()
+
+# Exercise 3: Function with matplotlib (returns None)
+def matplotlib_ejercicio_1(x: list[float], y: list[float]) -> None:
+    """
+    Docstring explaining what the function should do.
+    """
+    pass
+```
+
+#### Key considerations for external libraries:
+
+1. **File paths**: Always use `os.path` to create robust relative paths:
+   ```python
+   _current_dir = os.path.dirname(os.path.abspath(__file__))
+   DATASET_PATH = os.path.join(_current_dir, "exercises_N_data", "dataset.csv")
+   ```
+
+2. **Data directories**: Create a subdirectory `exercises_N_data/` for datasets:
+   - Include an `__init__.py` file to make it a Python module
+   - Place CSV or other data files in this directory
+   - Use descriptive names like `dataset.csv`
+
+3. **Type hints for external libraries**:
+   - `np.ndarray` for numpy arrays
+   - `pd.DataFrame` for pandas DataFrames
+   - `pd.Series` for pandas Series
+   - `tuple[int, ...]` for tuples of variable length (e.g., array shapes)
+   - `None` for matplotlib functions that only create plots
+
+4. **Return types**:
+   - NumPy functions: Return `np.ndarray` or primitive types (`float`, `int`)
+   - Pandas functions: Return `pd.DataFrame` or `pd.Series`
+   - Matplotlib functions: Return `None` (they create visualizations)
+
+5. **Placeholder return values**:
+   - NumPy: `np.array([])` for arrays, `0.0` for floats
+   - Pandas: `pd.DataFrame()` for DataFrames, `pd.Series()` for Series
+   - Matplotlib: `pass` (functions return `None`)
+
+#### Corresponding test file structure:
+
+```python
+import numpy as np
+import pandas as pd
+from exercises import exercises_N as mod
+
+# Test for numpy function
+def test_numpy_ejercicio_1():
+    try:
+        func = mod.numpy_ejercicio_1  # type: ignore # noqa
+    except ImportError:
+        assert False, "No se pudo importar la función"
+    
+    arr = np.array([1, 2, 3, 4, 5])
+    result = func(arr)
+    assert result == 3.0, "Mensaje descriptivo en español"
+
+# Test for pandas function
+def test_pandas_ejercicio_1():
+    try:
+        func = mod.pandas_ejercicio_1  # type: ignore # noqa
+    except ImportError:
+        assert False, "No se pudo importar la función"
+    
+    result = func()
+    assert isinstance(result, pd.DataFrame), "Debe retornar un DataFrame"
+    assert len(result) > 0, "El DataFrame no debería estar vacío"
+
+# Test for matplotlib function (no return value)
+def test_matplotlib_ejercicio_1():
+    try:
+        func = mod.matplotlib_ejercicio_1  # type: ignore # noqa
+    except ImportError:
+        assert False, "No se pudo importar la función"
+    
+    x = [1, 2, 3, 4, 5]
+    y = [2, 4, 6, 8, 10]
+    
+    # La función no retorna nada, solo verificar que no lance error
+    try:
+        func(x, y)
+    except Exception as e:
+        assert False, f"La función debería ejecutarse sin errores, pero lanzó: {e}"
+```
+
+#### Special considerations for tests with external libraries:
+
+1. **NumPy arrays**: Use `np.array_equal()` to compare arrays, not `==`
+2. **Pandas DataFrames**: Check `isinstance(result, pd.DataFrame)` and verify columns/content
+3. **Pandas Series**: Check `isinstance(result, pd.Series)` and verify values
+4. **Matplotlib functions**: Test that they execute without errors (they return `None`)
+5. **Variable-length tuples**: Use `tuple[int, ...]` type hint for shapes that can vary (1D: `(5,)`, 2D: `(3, 2)`, etc.)
+
 ## 📚 Reference Examples
 
 - **Simple Generator Pattern**: `exercises_1.py` / `test_exercises_1.py`
 - **Generator Pattern with Functions**: `exercises_2.py` / `test_exercises_2.py`
 - **Direct Functions Pattern**: `exercises_3.py` / `test_exercises_3.py`
+- **External Libraries Pattern**: `exercises_5.py` / `test_exercises_5.py`
 
 ## 🔍 Verification
 
@@ -248,3 +397,35 @@ Before considering exercises and tests complete:
 2. Verify that all tests pass with correct solutions
 3. Verify that tests fail appropriately with incorrect solutions
 4. Review that error messages are clear and useful
+5. **For external libraries**: Verify type consistency between exercises and tests:
+   - Check that return types match what tests expect
+   - Ensure `tuple[int, ...]` is used for variable-length tuples (not `tuple[int, int]`)
+   - Verify that matplotlib functions return `None`
+   - Confirm that numpy/pandas types are correctly annotated
+
+## ⚠️ Common Pitfalls
+
+### Type Hints
+- ❌ **Wrong**: `tuple[int, int]` for array shapes (only works for 2D arrays)
+- ✅ **Correct**: `tuple[int, ...]` for array shapes (works for 1D, 2D, 3D, etc.)
+
+- ❌ **Wrong**: `list` for numpy arrays
+- ✅ **Correct**: `np.ndarray` for numpy arrays
+
+- ❌ **Wrong**: `dict` for pandas DataFrames
+- ✅ **Correct**: `pd.DataFrame` for pandas DataFrames
+
+### File Paths
+- ❌ **Wrong**: `"exercises/exercises_N_data/dataset.csv"` (hardcoded relative path)
+- ✅ **Correct**: Use `os.path.join()` with `__file__` for robust paths
+
+### Return Values
+- ❌ **Wrong**: Returning a value from matplotlib functions
+- ✅ **Correct**: Matplotlib functions should return `None` and use `pass` as placeholder
+
+### Tests
+- ❌ **Wrong**: Using `==` to compare numpy arrays
+- ✅ **Correct**: Use `np.array_equal()` for numpy array comparison
+
+- ❌ **Wrong**: Testing return value of matplotlib functions
+- ✅ **Correct**: Test that matplotlib functions execute without errors
