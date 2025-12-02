@@ -1,0 +1,61 @@
+fecha,producto,categoria,cantidad,precio_unitario,total,ciudad,vendedor
+2024-11-23,Mouse,Electrónica,5,527.54,2637.7,Córdoba,Laura
+2024-02-22,Mouse,Dispositivos,7,111.98,783.86,Buenos Aires,María
+2024-04-29,Laptop,Dispositivos,4,1446.24,5784.96,La Plata,Ana
+2024-04-22,Smartphone,Dispositivos,5,1628.39,8141.95,Buenos Aires,María
+2024-12-23,Tablet,Accesorios,5,353.19,1765.95,Rosario,Juan
+2024-02-17,Tablet,Electrónica,6,1702.61,10215.66,La Plata,Carlos
+2024-01-23,Smartphone,Dispositivos,2,1947.58,3895.16,Mendoza,Juan
+2024-10-09,Auriculares,Dispositivos,10,1776.63,17766.3,Rosario,Pedro
+2024-04-08,Mouse,Electrónica,4,1557.48,6229.92,Buenos Aires,María
+2024-02-21,Tablet,Accesorios,8,1289.58,10316.64,Rosario,María
+2024-07-08,Webcam,Electrónica,5,1418.55,7092.75,Buenos Aires,Pedro
+2024-11-21,Teclado,Dispositivos,4,368.63,1474.52,Mendoza,Carlos
+2024-11-23,Monitor,Dispositivos,6,1693.56,10161.36,Buenos Aires,María
+2024-01-17,Webcam,Accesorios,5,179.07,895.35,La Plata,Laura
+2024-06-10,Monitor,Dispositivos,8,821.48,6571.84,Mendoza,María
+2024-05-15,Teclado,Electrónica,9,1101.01,9909.09,La Plata,Ana
+2024-10-25,Tablet,Accesorios,4,1994.79,7979.16,Córdoba,Pedro
+2024-09-09,Mouse,Electrónica,2,348.04,696.08,Córdoba,Laura
+2024-08-04,Mouse,Accesorios,7,1211.98,8483.86,Mendoza,Pedro
+2024-05-08,Laptop,Dispositivos,2,1379.34,2758.68,La Plata,Carlos
+2024-11-24,Webcam,Electrónica,5,897.79,4488.95,Mendoza,Juan
+2024-05-14,Teclado,Dispositivos,2,1747.51,3495.02,Rosario,Laura
+2024-09-16,Monitor,Electrónica,6,1536.9,9221.4,La Plata,Pedro
+2024-01-01,Webcam,Accesorios,1,268.14,268.14,Rosario,Carlos
+2024-05-02,Laptop,Electrónica,10,1896.55,18965.5,Buenos Aires,Laura
+2024-09-05,Mouse,Dispositivos,3,300.36,901.08,Mendoza,Pedro
+2024-03-25,Auriculares,Dispositivos,10,875.12,8751.2,Córdoba,Pedro
+2024-12-19,Monitor,Dispositivos,5,828.03,4140.15,Rosario,Ana
+2024-09-21,Smartphone,Electrónica,4,488.16,1952.64,Rosario,Juan
+2024-10-28,Monitor,Dispositivos,4,64.02,256.08,Buenos Aires,María
+2024-02-04,Laptop,Accesorios,2,1052.6,2105.2,Rosario,Laura
+2024-09-05,Monitor,Dispositivos,3,1460.54,4381.62,La Plata,Pedro
+2024-08-30,Monitor,Accesorios,7,421.3,2949.1,Buenos Aires,Laura
+2024-08-08,Webcam,Accesorios,7,960.7,6724.9,Buenos Aires,Laura
+2024-11-30,Mouse,Electrónica,7,1470.02,10290.14,Buenos Aires,María
+2024-04-08,Monitor,Dispositivos,8,323.36,2586.88,Córdoba,Carlos
+2024-08-24,Monitor,Electrónica,8,1625.64,13005.12,La Plata,Juan
+2024-01-26,Laptop,Electrónica,4,374.31,1497.24,Mendoza,Ana
+2024-04-19,Tablet,Electrónica,3,789.0,2367.0,Mendoza,Carlos
+2024-08-20,Auriculares,Accesorios,9,1340.65,12065.85,Mendoza,María
+2024-04-07,Auriculares,Electrónica,1,1179.4,1179.4,La Plata,Juan
+2024-06-09,Laptop,Electrónica,10,979.74,9797.4,La Plata,María
+2024-01-30,Mouse,Electrónica,2,1210.32,2420.64,Córdoba,Ana
+2024-03-02,Monitor,Dispositivos,10,127.5,1275.0,Buenos Aires,Ana
+2024-12-02,Webcam,Accesorios,4,1355.97,5423.88,Rosario,María
+2024-05-15,Tablet,Electrónica,5,941.59,4707.95,Buenos Aires,Juan
+2024-08-22,Mouse,Electrónica,9,465.65,4190.85,Rosario,María
+2024-06-27,Mouse,Electrónica,6,605.73,3634.38,Mendoza,Pedro
+2024-12-26,Auriculares,Dispositivos,9,65.26,587.34,La Plata,Carlos
+2024-12-05,Mouse,Electrónica,5,275.09,1375.45,Buenos Aires,Laura
+2024-10-10,Teclado,Accesorios,5,1229.42,6147.1,Rosario,María
+2024-12-17,Auriculares,Dispositivos,8,539.69,4317.52,Buenos Aires,Juan
+2024-11-20,Tablet,Accesorios,1,56.91,56.91,Córdoba,Laura
+2024-05-14,Teclado,Dispositivos,8,1125.78,9006.24,Mendoza,Pedro
+2024-01-05,Mouse,Electrónica,3,1113.9,3341.7,Rosario,Pedro
+2024-10-09,Teclado,Accesorios,3,131.57,394.71,Rosario,Juan
+2024-07-02,Monitor,Dispositivos,4,1350.52,5402.08,Rosario,Pedro
+2024-07-27,Teclado,Electrónica,3,1953.6,5860.8,Córdoba,Ana
+2024-01-13,Teclado,Dispositivos,6,1575.65,9453.9,Mendoza,Laura
+2024-05-07,Auriculares,Electrónica,2,795.96,1591.92,Buenos Aires,Ana
